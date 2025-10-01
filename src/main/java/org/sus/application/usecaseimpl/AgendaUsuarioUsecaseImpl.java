@@ -25,5 +25,4 @@ public class AgendaUsuarioUsecaseImpl implements AgendaUsuarioUseCase {
         enviaAgendamentoGateway.execute(agendamentoNotificacao);
     }
 
-
 }
