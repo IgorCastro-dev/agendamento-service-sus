@@ -14,6 +14,8 @@ public class Cidadao {
         this.email = email;
     }
 
+    public Cidadao() {}
+
     public String getEmail() {
         return email;
     }
