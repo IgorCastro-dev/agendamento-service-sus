@@ -21,7 +21,12 @@ public class AgendaUsuarioUsecaseImpl implements AgendaUsuarioUseCase {
     @Override
     public void execute(Agendamento agendamento) {
         Cidadao cidadao = buscaCidadaoGateway.execute( agendamento.getCidadaoId() );
-        AgendamentoNotificacao agendamentoNotificacao = new AgendamentoNotificacao(cidadao.getEmail(), agendamento.getUnidadeId());
+        AgendamentoNotificacao agendamentoNotificacao = new AgendamentoNotificacao(
+                cidadao.getEmail(),
+                agendamento.getUnidadeId(),
+                agendamento.getData(),
+                agendamento.getHorarioInicio(),
+                agendamento.getHorarioFim());
         enviaAgendamentoGateway.execute(agendamentoNotificacao);
     }
 
